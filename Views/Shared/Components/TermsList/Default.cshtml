@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Myblog1.Models.Term>
+@{
+    ViewData["Title"] = "Default";
+}
+
+    <ul>
+        @foreach (var item in Model)
+        {
+        <li>@Html.ActionLink(@item.Name, "Index", "Category", new { id = @item.Id }, null)</li>
+        }
+    </ul>

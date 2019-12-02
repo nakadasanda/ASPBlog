@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Myblog1.Models.Post>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class=".article_title">
+    <h1>記事一覧</h1>
+</div>
+
+<ul>
+    @foreach (var item in Model)
+    {
+    <li class="entry-title">
+        @Html.ActionLink(@item.Title,"View","Blog",new { id = @item.Id },null)
+    </li>   
+   }
+</ul>
